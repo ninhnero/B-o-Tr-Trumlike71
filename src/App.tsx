@@ -132,7 +132,7 @@ export default function App() {
 
   // Real countdown timer decrementing
   useEffect(() => {
-    // Generate constant target hour: 08:00 AM next day
+    // Generate constant target hour: 10 hours from now
     const target = new Date();
     target.setHours(target.getHours() + 10);
     
@@ -238,41 +238,41 @@ export default function App() {
   ];
 
   return (
-    <div id="maintenance_panel" class="min-h-screen bg-slate-950 text-slate-100 flex flex-col justify-between overflow-x-hidden relative grid-bg">
+    <div id="maintenance_panel" className="min-h-screen bg-slate-950 text-slate-100 flex flex-col justify-between overflow-x-hidden relative grid-bg">
       
       {/* Decorative Blur Backgrounds */}
-      <div class="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-cyan-500/10 blur-[130px] animate-pulse-slow pointer-events-none" />
-      <div class="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-indigo-500/10 blur-[130px] animate-pulse-slow pointer-events-none" />
+      <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-cyan-500/10 blur-[130px] animate-pulse-slow pointer-events-none" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-indigo-500/10 blur-[130px] animate-pulse-slow pointer-events-none" />
 
       {/* Header Bar */}
-      <header id="app_header" class="border-b border-slate-900 bg-slate-950/70 backdrop-blur-md sticky top-0 z-50 transition-all">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <header id="app_header" className="border-b border-slate-900 bg-slate-950/70 backdrop-blur-md sticky top-0 z-50 transition-all">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           
           {/* Logo Brand */}
-          <div class="flex items-center gap-3">
-            <div class="p-2.5 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 shadow-lg shadow-cyan-500/10 flex items-center justify-center">
+          <div className="flex items-center gap-3">
+            <div className="p-2.5 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 shadow-lg shadow-cyan-500/10 flex items-center justify-center">
               <Server className="w-6 h-6 text-white stroke-[2]" />
             </div>
             <div>
-              <span class="text-xl sm:text-2xl font-black tracking-tight bg-gradient-to-r from-white via-slate-200 to-cyan-400 bg-clip-text text-transparent">{brandName}</span>
-              <div class="flex items-center gap-1.5 mt-0.5">
-                <span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
-                <span class="text-[10px] uppercase tracking-wider font-bold text-amber-400">Đang Chuyển Server</span>
+              <span className="text-xl sm:text-2xl font-black tracking-tight bg-gradient-to-r from-white via-slate-200 to-cyan-400 bg-clip-text text-transparent">{brandName}</span>
+              <div className="flex items-center gap-1.5 mt-0.5">
+                <span className="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
+                <span className="text-[10px] uppercase tracking-wider font-bold text-amber-400 font-sans">Đang Chuyển Server</span>
               </div>
             </div>
           </div>
 
           {/* Quick Action Buttons Header (Desktop) */}
-          <div class="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-4">
             <button 
               id="copy_phone_header"
               onClick={handleCopyHotline}
-              class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold hover:bg-slate-800 transition text-slate-300"
+              className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold hover:bg-slate-800 transition text-slate-300"
             >
               <Phone className="w-3.5 h-3.5 text-cyan-400" />
               <span>SĐT: {hotlineNumber}</span>
               <Copy className="w-3 h-3 text-slate-500 hover:text-white" />
-              {copied && <span class="text-[10px] text-emerald-400 ml-1">Đã chép!</span>}
+              {copied && <span className="text-[10px] text-emerald-400 ml-1">Đã chép!</span>}
             </button>
             <a 
               id="join_zalo_header"
@@ -287,8 +287,8 @@ export default function App() {
           </div>
 
           {/* Mobile Status Badge */}
-          <div class="block md:hidden">
-            <span class="px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-500 border border-amber-500/20 text-xs font-semibold">
+          <div className="block md:hidden">
+            <span className="px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-500 border border-amber-500/20 text-xs font-semibold">
               Bảo trì S1
             </span>
           </div>
@@ -297,67 +297,67 @@ export default function App() {
       </header>
 
       {/* Main Container */}
-      <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 w-full z-10">
+      <main className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 w-full z-10">
         
         {/* Urgent Announcement Hero Section */}
-        <div id="announcement_hero" class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-500/10 text-rose-400 border border-rose-500/20 text-xs font-semibold mb-6 animate-bounce">
+        <div id="announcement_hero" className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-500/10 text-rose-400 border border-rose-500/20 text-xs font-semibold mb-6 animate-bounce">
             <AlertTriangle className="w-3.5 h-3.5" />
             <span>Nâng Cấp Hệ Thống Đại Lý Tự Động Toàn Cầu</span>
           </div>
           
-          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
             Nâng Cấp Server Siêu Cấp <br />
-            <span class="bg-gradient-to-r from-cyan-400 via-indigo-400 to-violet-500 bg-clip-text text-transparent">Gấp 5 Lần Tốc Độ</span>
+            <span className="bg-gradient-to-r from-cyan-400 via-indigo-400 to-violet-500 bg-clip-text text-transparent">Gấp 5 Lần Tốc Độ</span>
           </h1>
           
-          <p class="text-sm sm:text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-            Chúng tôi thành thật xin lỗi vì sự gián đoạn này. Hệ thống máy chủ của <strong class="text-white font-semibold">{brandName}</strong> đang tiến hành đồng bộ dữ liệu ví và nâng cấp hạ tầng mạng. Dịch vụ dự kiến sẽ trực tuyến sớm hơn thời gian đếm ngược.
+          <p className="text-sm sm:text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+            Chúng tôi thành thật xin lỗi vì sự gián đoạn này. Hệ thống máy chủ của <strong className="text-white font-semibold">{brandName}</strong> đang tiến hành đồng bộ dữ liệu ví và nâng cấp hạ tầng mạng. Dịch vụ dự kiến sẽ trực tuyến sớm hơn thời gian đếm ngược.
           </p>
 
           {/* Core Countdown Elements */}
-          <div id="countdown_timer" class="grid grid-cols-3 gap-3 max-w-md mx-auto mb-12">
+          <div id="countdown_timer" className="grid grid-cols-3 gap-3 max-w-md mx-auto mb-12">
             
             {/* Hours Box */}
-            <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-4 rounded-2xl relative shadow-xl overflow-hidden group">
-              <div class="absolute inset-0 bg-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-              <div class="relative z-10">
-                <span class="block text-3xl sm:text-4xl font-extrabold font-mono text-cyan-400">
+            <div className="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-4 rounded-2xl relative shadow-xl overflow-hidden group">
+              <div className="absolute inset-0 bg-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+              <div className="relative z-10">
+                <span className="block text-3xl sm:text-4xl font-extrabold font-mono text-cyan-400">
                   {String(timeLeft.hours).padStart(2, "0")}
                 </span>
-                <span class="block text-[10px] uppercase font-bold tracking-wider text-slate-500 mt-1">Giờ</span>
+                <span className="block text-[10px] uppercase font-bold tracking-wider text-slate-500 mt-1">Giờ</span>
               </div>
-              <div class="absolute bottom-0 inset-x-0 h-1 bg-cyan-500" />
+              <div className="absolute bottom-0 inset-x-0 h-1 bg-cyan-500" />
             </div>
 
             {/* Minutes Box */}
-            <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-4 rounded-2xl relative shadow-xl overflow-hidden group">
-              <div class="absolute inset-0 bg-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-              <div class="relative z-10">
-                <span class="block text-3xl sm:text-4xl font-extrabold font-mono text-indigo-400 animate-pulse">
+            <div className="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-4 rounded-2xl relative shadow-xl overflow-hidden group">
+              <div className="absolute inset-0 bg-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+              <div className="relative z-10">
+                <span className="block text-3xl sm:text-4xl font-extrabold font-mono text-indigo-400 animate-pulse">
                   {String(timeLeft.minutes).padStart(2, "0")}
                 </span>
-                <span class="block text-[10px] uppercase font-bold tracking-wider text-slate-500 mt-1">Phút</span>
+                <span className="block text-[10px] uppercase font-bold tracking-wider text-slate-500 mt-1">Phút</span>
               </div>
-              <div class="absolute bottom-0 inset-x-0 h-1 bg-indigo-500" />
+              <div className="absolute bottom-0 inset-x-0 h-1 bg-indigo-500" />
             </div>
 
             {/* Seconds Box */}
-            <div class="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-4 rounded-2xl relative shadow-xl overflow-hidden group">
-              <div class="absolute inset-0 bg-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-              <div class="relative z-10">
-                <span class="block text-3xl sm:text-4xl font-extrabold font-mono text-purple-400">
+            <div className="bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 p-4 rounded-2xl relative shadow-xl overflow-hidden group">
+              <div className="absolute inset-0 bg-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+              <div className="relative z-10">
+                <span className="block text-3xl sm:text-4xl font-extrabold font-mono text-purple-400">
                   {String(timeLeft.seconds).padStart(2, "0")}
                 </span>
-                <span class="block text-[10px] uppercase font-bold tracking-wider text-slate-500 mt-1">Giây</span>
+                <span className="block text-[10px] uppercase font-bold tracking-wider text-slate-500 mt-1">Giây</span>
               </div>
-              <div class="absolute bottom-0 inset-x-0 h-1 bg-purple-500" />
+              <div className="absolute bottom-0 inset-x-0 h-1 bg-purple-500" />
             </div>
 
           </div>
 
           {/* Quick Action Group Links (Prominent CTAs) */}
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto">
             
             {/* Zalo CTA Box */}
             <a 
@@ -365,19 +365,19 @@ export default function App() {
               href={zaloGroupLink}
               target="_blank"
               rel="noopener noreferrer"
-              class="w-full sm:w-1/2 flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-cyan-600/90 to-blue-700 hover:from-cyan-600 hover:to-blue-600 font-bold text-white shadow-xl shadow-cyan-500/10 cursor-pointer overflow-hidden relative group transition-all transform hover:-translate-y-0.5 active:translate-y-0 border border-cyan-500/20"
+              className="w-full sm:w-1/2 flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-cyan-600/90 to-blue-700 hover:from-cyan-600 hover:to-blue-600 font-bold text-white shadow-xl shadow-cyan-500/10 cursor-pointer overflow-hidden relative group transition-all transform hover:-translate-y-0.5 active:translate-y-0 border border-cyan-500/20"
             >
-              <div class="absolute top-[-30px] right-[-30px] w-20 h-20 bg-white/10 rounded-full rotate-45 transform scale-150 group-hover:scale-175 transition-all pointer-events-none" />
-              <div class="flex items-center gap-3 relative z-10">
-                <div class="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
+              <div className="absolute top-[-30px] right-[-30px] w-20 h-20 bg-white/10 rounded-full rotate-45 transform scale-150 group-hover:scale-175 transition-all pointer-events-none" />
+              <div className="flex items-center gap-3 relative z-10">
+                <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
                   <MessageSquare className="w-5.5 h-5.5 text-white" />
                 </div>
-                <div class="text-left">
-                  <span class="block text-[11px] font-medium text-cyan-200 uppercase tracking-widest leading-none">Mạng xã hội</span>
-                  <span class="block text-sm pt-0.5">Group Zalo Hỗ Trợ</span>
+                <div className="text-left">
+                  <span className="block text-[11px] font-medium text-cyan-200 uppercase tracking-widest leading-none">Mạng xã hội</span>
+                  <span className="block text-sm pt-0.5">Group Zalo Hỗ Trợ</span>
                 </div>
               </div>
-              <div class="w-8 h-8 rounded-full bg-slate-950/20 flex items-center justify-center text-white group-hover:translate-x-1 transition-transform relative z-10">
+              <div className="w-8 h-8 rounded-full bg-slate-950/20 flex items-center justify-center text-white group-hover:translate-x-1 transition-transform relative z-10">
                 <ChevronRight className="w-4 h-4" />
               </div>
             </a>
@@ -385,22 +385,22 @@ export default function App() {
             {/* Hotline Calling Box */}
             <div 
               id="huge_hotline_cta"
-              class="w-full sm:w-1/2 flex items-center justify-between p-4 rounded-xl bg-slate-900 hover:bg-slate-800/90 border border-slate-800 font-bold shadow-xl overflow-hidden relative group transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+              className="w-full sm:w-1/2 flex items-center justify-between p-4 rounded-xl bg-slate-900 hover:bg-slate-800/90 border border-slate-800 font-bold shadow-xl overflow-hidden relative group transition-all transform hover:-translate-y-0.5 active:translate-y-0"
             >
-              <div class="flex items-center gap-3">
+              <div className="flex items-center gap-3">
                 <a 
                   id="hotline_dial_action"
                   href={`tel:${rawHotline}`} 
-                  class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform cursor-pointer"
+                  className="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform cursor-pointer"
                   title="Gọi ngay hotline"
                 >
                   <Phone className="w-5 h-5 text-emerald-400 fill-emerald-400/20" />
                 </a>
-                <div class="text-left">
-                  <span class="block text-[11px] font-medium text-slate-500 uppercase tracking-widest leading-none">Chăm sóc khách hàng</span>
+                <div className="text-left">
+                  <span className="block text-[11px] font-medium text-slate-500 uppercase tracking-widest leading-none">Chăm sóc khách hàng</span>
                   <a 
                     href={`tel:${rawHotline}`} 
-                    class="block text-sm pt-0.5 font-extrabold hover:text-cyan-400 text-white transition decoration-cyan-500/40"
+                    className="block text-sm pt-0.5 font-extrabold hover:text-cyan-400 text-white transition decoration-cyan-500/40"
                   >
                     Hotline: {hotlineNumber}
                   </a>
@@ -410,7 +410,7 @@ export default function App() {
               <button 
                 id="copy_phone_main"
                 onClick={handleCopyHotline}
-                class="w-8 h-8 rounded-full bg-slate-950 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-900 transition-all cursor-pointer"
+                className="w-8 h-8 rounded-full bg-slate-950 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-900 transition-all cursor-pointer"
                 title="Sao chép số"
               >
                 {copied ? (
@@ -427,86 +427,86 @@ export default function App() {
             <motion.div 
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              class="text-xs text-emerald-400 mt-3 font-semibold space-x-1"
+              className="text-xs text-emerald-400 mt-3 font-semibold space-x-1"
             >
-              🎉 Đã sao chép Hotline <strong class="underline">{hotlineNumber}</strong> thành công! Quý đại lý có thể liên hệ trực tiếp.
+              🎉 Đã sao chép Hotline <strong className="underline">{hotlineNumber}</strong> thành công! Quý đại lý có thể liên hệ trực tiếp.
             </motion.div>
           )}
 
         </div>
 
         {/* Dashboard Section */}
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
           
           {/* Left Column (Roadmap & Status Dashboard - 7 cols) */}
-          <div class="lg:col-span-7 space-y-8">
+          <div className="lg:col-span-7 space-y-8">
             
             {/* Real-time Infrastructure Monitoring Panel */}
-            <div id="telemetry_monitor" class="bg-slate-900/60 backdrop-blur-md rounded-2xl border border-slate-800/80 p-5 shadow-2xl relative overflow-hidden">
-              <div class="flex items-center justify-between mb-5">
-                <h3 class="font-bold text-slate-200 text-sm flex items-center gap-2">
+            <div id="telemetry_monitor" className="bg-slate-900/60 backdrop-blur-md rounded-2xl border border-slate-800/80 p-5 shadow-2xl relative overflow-hidden">
+              <div className="flex items-center justify-between mb-5">
+                <h3 className="font-bold text-slate-200 text-sm flex items-center gap-2">
                   <Activity className="w-4 h-4 text-cyan-400 animate-pulse" />
                   <span>GIÁM SÁT TIẾN TRÌNH DI TRÚ SERVER S1 (LIVE)</span>
                 </h3>
-                <div class="flex items-center gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
-                  <span class="text-[10px] font-mono font-bold text-emerald-500 bg-emerald-500/10 px-2 py-0.5 rounded-full uppercase tracking-wider">Hạ tầng sẵn sàng</span>
+                <div className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+                  <span className="text-[10px] font-mono font-bold text-emerald-500 bg-emerald-500/10 px-2 py-0.5 rounded-full uppercase tracking-wider">Hạ tầng sẵn sàng</span>
                 </div>
               </div>
 
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-5">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-5">
                 
-                <div class="p-3 bg-slate-950/80 rounded-xl border border-slate-800/60">
-                  <span class="block text-[11px] text-slate-500">Đồng bộ cơ sở dữ liệu</span>
-                  <span class="block text-lg font-extrabold font-mono text-cyan-400 mt-1">{progressPercent}%</span>
-                  <div class="w-full bg-slate-800 h-1 rounded-full mt-2 overflow-hidden">
-                    <div class="bg-cyan-400 h-full rounded-full transition-all duration-1000" style={{ width: `${progressPercent}%` }}></div>
+                <div className="p-3 bg-slate-950/80 rounded-xl border border-slate-800/60">
+                  <span className="block text-[11px] text-slate-500">Đồng bộ cơ sở dữ liệu</span>
+                  <span className="block text-lg font-extrabold font-mono text-cyan-400 mt-1">{progressPercent}%</span>
+                  <div className="w-full bg-slate-800 h-1 rounded-full mt-2 overflow-hidden">
+                    <div className="bg-cyan-400 h-full rounded-full transition-all duration-1000" style={{ width: `${progressPercent}%` }}></div>
                   </div>
                 </div>
 
-                <div class="p-3 bg-slate-950/80 rounded-xl border border-slate-800/60">
-                  <span class="block text-[11px] text-slate-500">Tốc độ băng thông</span>
-                  <span class="block text-lg font-extrabold font-mono text-indigo-400 mt-1">{syncSpeed} MB/s</span>
-                  <span class="block text-[9px] text-indigo-500 mt-1 flex items-center gap-1">
+                <div className="p-3 bg-slate-950/80 rounded-xl border border-slate-800/60">
+                  <span className="block text-[11px] text-slate-500">Tốc độ băng thông</span>
+                  <span className="block text-lg font-extrabold font-mono text-indigo-400 mt-1">{syncSpeed} MB/s</span>
+                  <span className="block text-[9px] text-indigo-500 mt-1 flex items-center gap-1">
                     <RefreshCw className="w-2.5 h-2.5 animate-spin" /> Live update 4s
                   </span>
                 </div>
 
-                <div class="p-3 bg-slate-950/80 rounded-xl border border-slate-800/60">
-                  <span class="block text-[11px] text-slate-500">Dung lượng an toàn</span>
-                  <span class="block text-lg font-extrabold font-mono text-purple-400 mt-1">{syncedSize} / {totalSize} TB</span>
-                  <span class="block text-[9px] font-bold text-emerald-400 mt-1">Đã mã hóa 100%</span>
+                <div className="p-3 bg-slate-950/80 rounded-xl border border-slate-800/60">
+                  <span className="block text-[11px] text-slate-500">Dung lượng an toàn</span>
+                  <span className="block text-lg font-extrabold font-mono text-purple-400 mt-1">{syncedSize} / {totalSize} TB</span>
+                  <span className="block text-[9px] font-bold text-emerald-400 mt-1 font-sans">Đã mã hóa 100%</span>
                 </div>
 
-                <div class="p-3 bg-slate-950/80 rounded-xl border border-slate-800/60">
-                  <span class="block text-[11px] text-slate-500">Tải lượng CPU máy chủ</span>
-                  <span class="block text-lg font-extrabold font-mono text-amber-500 mt-1">{serverLoad}%</span>
-                  <span class="block text-[9px] text-slate-500 mt-1">Nhiệt độ: Đạt chuẩn</span>
+                <div className="p-3 bg-slate-950/80 rounded-xl border border-slate-800/60">
+                  <span className="block text-[11px] text-slate-500">Tải lượng CPU máy chủ</span>
+                  <span className="block text-lg font-extrabold font-mono text-amber-500 mt-1">{serverLoad}%</span>
+                  <span className="block text-[9px] text-slate-500 mt-1">Nhiệt độ: Đạt chuẩn</span>
                 </div>
 
               </div>
 
               {/* Progress Bar overall */}
-              <div class="mb-4">
-                <div class="flex justify-between text-xs font-semibold mb-1">
-                  <span class="text-slate-400">Tiến trình tổng thể di chuyển dữ liệu cốt lõi:</span>
-                  <span class="text-cyan-400">{progressPercent}%</span>
+              <div className="mb-4">
+                <div className="flex justify-between text-xs font-semibold mb-1">
+                  <span className="text-slate-400">Tiến trình tổng thể di chuyển dữ liệu cốt lõi:</span>
+                  <span className="text-cyan-400">{progressPercent}%</span>
                 </div>
-                <div class="w-full h-3.5 bg-slate-950 rounded-full p-0.5 border border-slate-800">
+                <div className="w-full h-3.5 bg-slate-950 rounded-full p-0.5 border border-slate-800">
                   <div 
-                    class="h-full bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-500 rounded-full transition-all duration-1000 relative"
+                    className="h-full bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-500 rounded-full transition-all duration-1000 relative"
                     style={{ width: `${progressPercent}%` }}
                   >
-                    <span class="absolute right-1 top-0.5 w-1.5 h-1.5 bg-white rounded-full animate-ping"></span>
+                    <span className="absolute right-1 top-0.5 w-1.5 h-1.5 bg-white rounded-full animate-ping"></span>
                   </div>
                 </div>
               </div>
 
               {/* Real-time Event System Log Container */}
-              <div class="p-3 bg-slate-950 font-mono text-xs text-slate-500 rounded-lg border border-slate-850/80 space-y-1.5 max-h-24 overflow-y-auto">
+              <div className="p-3 bg-slate-950 font-mono text-xs text-slate-500 rounded-lg border border-slate-850/80 space-y-1.5 max-h-24 overflow-y-auto">
                 {activeLogs.map((log, i) => (
-                  <div key={i} class={`flex items-start gap-1 ${i === 0 ? "text-cyan-400/90 font-medium" : "text-slate-500"}`}>
-                    <span class="text-cyan-500 select-none">&gt;</span>
+                  <div key={i} className={`flex items-start gap-1 ${i === 0 ? "text-cyan-400/90 font-medium" : "text-slate-500"}`}>
+                    <span className="text-cyan-500 select-none">&gt;</span>
                     <span>{log}</span>
                   </div>
                 ))}
@@ -515,11 +515,11 @@ export default function App() {
             </div>
 
             {/* TAB SELECTOR for Roadmap or FAQ */}
-            <div class="flex border-b border-slate-800/80">
+            <div className="flex border-b border-slate-800/80">
               <button 
                 id="tab_btn_roadmap"
                 onClick={() => setActiveTab("roadmap")}
-                class={`flex items-center gap-2 px-6 py-3.5 font-bold text-sm border-b-2 transition -mb-[2px] cursor-pointer ${
+                className={`flex items-center gap-2 px-6 py-3.5 font-bold text-sm border-b-2 transition -mb-[2px] cursor-pointer ${
                   activeTab === "roadmap" 
                   ? "border-cyan-500 text-white" 
                   : "border-transparent text-slate-500 hover:text-slate-300"
@@ -527,13 +527,13 @@ export default function App() {
               >
                 <Settings className="w-4 h-4" />
                 <span>Lộ Trình Chuyển Đổi</span>
-                <span class="px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-400 text-[10px] font-bold">4 Bước</span>
+                <span className="px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-400 text-[10px] font-bold">4 Bước</span>
               </button>
               
               <button 
                 id="tab_btn_faq"
                 onClick={() => setActiveTab("faq")}
-                class={`flex items-center gap-2 px-6 py-3.5 font-bold text-sm border-b-2 transition -mb-[2px] cursor-pointer ${
+                className={`flex items-center gap-2 px-6 py-3.5 font-bold text-sm border-b-2 transition -mb-[2px] cursor-pointer ${
                   activeTab === "faq" 
                   ? "border-cyan-500 text-white" 
                   : "border-transparent text-slate-500 hover:text-slate-300"
@@ -553,12 +553,12 @@ export default function App() {
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -15 }}
-                    class="space-y-4"
+                    className="space-y-4"
                   >
                     {roadmapSteps.map((step, idx) => (
                       <div 
                         key={step.id} 
-                        class={`p-4 rounded-xl border transition-all ${
+                        className={`p-4 rounded-xl border transition-all ${
                           step.status === "done" 
                             ? "bg-slate-900/30 border-slate-800/50 opacity-80" 
                             : step.status === "running"
@@ -566,46 +566,46 @@ export default function App() {
                             : "bg-slate-900/10 border-slate-900/70"
                         }`}
                       >
-                        <div class="flex items-start gap-4">
+                        <div className="flex items-start gap-4">
                           
                           {/* Number / Status Circle Indicator */}
-                          <div class="mt-0.5">
+                          <div className="mt-0.5">
                             {step.status === "done" ? (
-                              <div class="w-7 h-7 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center justify-center border border-emerald-500/30">
+                              <div className="w-7 h-7 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center justify-center border border-emerald-500/30">
                                 <CheckCircle2 className="w-4 h-4" />
                               </div>
                             ) : step.status === "running" ? (
-                              <div class="w-7 h-7 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center border border-cyan-500/40 animate-pulse">
+                              <div className="w-7 h-7 bg-cyan-500/10 text-cyan-400 rounded-full flex items-center justify-center border border-cyan-500/40 animate-pulse">
                                 <RefreshCw className="w-4 h-4 animate-spin text-cyan-400" />
                               </div>
                             ) : (
-                              <div class="w-7 h-7 bg-slate-900 text-slate-500 rounded-full flex items-center justify-center border border-slate-800 text-xs font-bold">
+                              <div className="w-7 h-7 bg-slate-900 text-slate-500 rounded-full flex items-center justify-center border border-slate-800 text-xs font-bold">
                                 0{step.id}
                               </div>
                             )}
                           </div>
 
-                          <div class="flex-grow">
-                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                              <h4 class={`font-bold text-sm sm:text-base ${step.status === "done" ? "text-slate-400 line-through" : "text-white"}`}>
+                          <div className="flex-grow">
+                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                              <h4 className={`font-bold text-sm sm:text-base ${step.status === "done" ? "text-slate-400 line-through" : "text-white"}`}>
                                 {step.title}
                               </h4>
                               {step.status === "running" && (
-                                <span class="px-2 py-0.5 bg-cyan-950 text-cyan-400 text-[10px] font-bold rounded-full w-fit">
+                                <span className="px-2 py-0.5 bg-cyan-950 text-cyan-400 text-[10px] font-bold rounded-full w-fit">
                                   Đang đồng bộ - {step.progress}%
                                 </span>
                               )}
                               {step.status === "pending" && (
-                                <span class="px-2 py-0.5 bg-slate-950 text-slate-500 text-[10px] font-bold rounded-full border border-slate-900 w-fit">
+                                <span className="px-2 py-0.5 bg-slate-950 text-slate-500 text-[10px] font-bold rounded-full border border-slate-900 w-fit">
                                   Chờ đợi
                                 </span>
                               )}
                               {step.status === "done" && (
-                                <span class="text-[11px] font-semibold text-emerald-400">Hoàn tất</span>
+                                <span className="text-[11px] font-semibold text-emerald-400">Hoàn tất</span>
                               )}
                             </div>
                             
-                            <p class={`text-xs sm:text-sm mt-1 leading-relaxed ${step.status === "done" ? "text-slate-500" : "text-slate-400"}`}>
+                            <p className={`text-xs sm:text-sm mt-1 leading-relaxed ${step.status === "done" ? "text-slate-500" : "text-slate-400"}`}>
                               {step.description}
                             </p>
                           </div>
@@ -622,27 +622,27 @@ export default function App() {
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -15 }}
-                    class="space-y-3"
+                    className="space-y-3"
                   >
-                    <div class="p-4 bg-amber-500/10 border border-amber-500/20 text-amber-300 rounded-xl text-xs sm:text-sm flex items-start gap-2.5 mb-2">
+                    <div className="p-4 bg-amber-500/10 border border-amber-500/20 text-amber-300 rounded-xl text-xs sm:text-sm flex items-start gap-2.5 mb-2">
                       <AlertTriangle className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
                       <div>
-                        <strong class="font-bold">HƯỚNG DẪN BẢO VỆ VÍ:</strong> Vui lòng tuyệt đối không thực hiện giao dịch nạp tiền ATM/MOMO qua các số tài khoản ngân hàng cũ của hệ thống khi không có thông báo trực tiếp tải từ Group Đại lý Zalo. Chúng tôi đang kiểm thử bảo mật định tuyến nạp ví tự động.
+                        <strong className="font-bold">HƯỚNG DẪN BẢO VỆ VÍ:</strong> Vui lòng tuyệt đối không thực hiện giao dịch nạp tiền ATM/MOMO qua các số tài khoản ngân hàng cũ của hệ thống khi không có thông báo trực tiếp tải từ Group Đại lý Zalo. Chúng tôi đang kiểm thử bảo mật định tuyến nạp ví tự động.
                       </div>
                     </div>
 
                     {faqs.map((faq, index) => (
-                      <div key={index} class="border border-slate-850 bg-slate-900/30 rounded-xl transition overflow-hidden">
+                      <div key={index} className="border border-slate-850 bg-slate-900/30 rounded-xl transition overflow-hidden">
                         <button 
                           onClick={() => setFaqIndex(faqIndex === index ? null : index)}
-                          class="w-full text-left p-4 flex items-center justify-between gap-4 font-bold text-xs sm:text-sm hover:bg-slate-900/50 transition cursor-pointer"
+                          className="w-full text-left p-4 flex items-center justify-between gap-4 font-bold text-xs sm:text-sm hover:bg-slate-900/50 transition cursor-pointer"
                         >
-                          <span class="text-slate-200">{faq.q}</span>
+                          <span className="text-slate-200">{faq.q}</span>
                           <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform flex-shrink-0 ${faqIndex === index ? "rotate-180 text-cyan-400" : ""}`} />
                         </button>
                         
                         {faqIndex === index && (
-                          <div class="px-4 pb-4 pt-1 border-t border-slate-850 text-slate-400 text-xs sm:text-sm leading-relaxed">
+                          <div className="px-4 pb-4 pt-1 border-t border-slate-850 text-slate-400 text-xs sm:text-sm leading-relaxed">
                             {faq.a}
                           </div>
                         )}
@@ -656,21 +656,21 @@ export default function App() {
           </div>
 
           {/* Right Column (Support Interaction Ticket & General info - 5 cols) */}
-          <div class="lg:col-span-12 xl:col-span-5 space-y-8 lg:mt-0 xl:col-start-8">
+          <div className="lg:col-span-12 xl:col-span-5 space-y-8 lg:mt-0 xl:col-start-8">
             
             {/* Interactive Support Ticket Submission (Directly record) */}
-            <div id="support_ticket_panel" class="bg-slate-900/60 backdrop-blur-md border border-slate-800 rounded-2xl p-6 shadow-2xl relative">
-              <div class="absolute top-2 right-2 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-bold border border-emerald-500/20">
+            <div id="support_ticket_panel" className="bg-slate-900/60 backdrop-blur-md border border-slate-800 rounded-2xl p-6 shadow-2xl relative">
+              <div className="absolute top-2 right-2 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-bold border border-emerald-500/20">
                 <Wifi className="w-3 h-3 animate-pulse" />
                 <span>Tiếp nhận 24/7</span>
               </div>
 
-              <h3 class="font-extrabold text-lg text-white mb-2 flex items-center gap-2">
+              <h3 className="font-extrabold text-lg text-white mb-2 flex items-center gap-2">
                 <MessageSquare className="w-5 h-5 text-cyan-400" />
                 <span>Gửi Yêu Cầu Gấp</span>
               </h3>
               
-              <p class="text-xs text-slate-400 mb-5 leading-relaxed">
+              <p className="text-xs text-slate-400 mb-5 leading-relaxed">
                 Đăng ký ngay thông tin tài khoản nếu bạn cần đối soát giao dịch số dư ví, nạp hoặc lỗi xử lý dòng tiền khẩn cấp. Kỹ sư TRUMLIKE71 sẽ trực tiếp rà soát và phản hồi qua số Zalo của bạn.
               </p>
 
@@ -678,58 +678,58 @@ export default function App() {
                 <motion.div 
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  class="p-4 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 rounded-xl text-center space-y-3"
+                  className="p-4 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 rounded-xl text-center space-y-3"
                 >
-                  <div class="w-12 h-12 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto">
+                  <div className="w-12 h-12 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-7 h-7" />
                   </div>
                   <div>
-                    <h4 class="font-bold text-sm">Gửi Yêu Cầu Thành Công!</h4>
-                    <p class="text-[11px] text-emerald-300 mt-1">Yêu cầu trợ giúp đã được lưu cục bộ và xếp hàng xử lý tự động sang cơ sở dữ liệu mới.</p>
+                    <h4 className="font-bold text-sm">Gửi Yêu Cầu Thành Công!</h4>
+                    <p className="text-[11px] text-emerald-300 mt-1">Yêu cầu trợ giúp đã được lưu cục bộ và xếp hàng xử lý tự động sang cơ sở dữ liệu mới.</p>
                   </div>
-                  <div class="pt-2">
+                  <div className="pt-2">
                     <button 
                       onClick={() => setFormSuccess(false)}
-                      class="px-3.5 py-1.5 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-xs rounded-lg transition cursor-pointer"
+                      className="px-3.5 py-1.5 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-xs rounded-lg transition cursor-pointer"
                     >
                       Báo cáo thêm vấn đề khác
                     </button>
                   </div>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSupportSubmit} class="space-y-4">
+                <form onSubmit={handleSupportSubmit} className="space-y-4">
                   
                   <div>
-                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">Họ Tên Quý Khách <span class="text-rose-500">*</span></label>
+                    <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">Họ Tên Quý Khách <span className="text-rose-500">*</span></label>
                     <input 
                       type="text" 
                       required
                       placeholder="Ví dụ: Nguyễn Văn A"
                       value={ticket.name}
                       onChange={e => setTicket({ ...ticket, name: e.target.value })}
-                      class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs sm:text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition-colors"
+                      className="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs sm:text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition-colors"
                     />
                   </div>
 
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">SĐT Zalo Liên Hệ <span class="text-rose-500">*</span></label>
+                      <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">SĐT Zalo Liên Hệ <span className="text-rose-500">*</span></label>
                       <input 
                         type="tel" 
                         required
                         placeholder="Số điện thoại"
                         value={ticket.contact}
                         onChange={e => setTicket({ ...ticket, contact: e.target.value })}
-                        class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs sm:text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition-colors"
+                        className="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs sm:text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition-colors"
                       />
                     </div>
 
                     <div>
-                      <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">Hạng Mục Lỗi</label>
+                      <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">Hạng Mục Lỗi</label>
                       <select 
                         value={ticket.service}
                         onChange={e => setTicket({ ...ticket, service: e.target.value })}
-                        class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs sm:text-sm text-slate-100 focus:outline-none focus:border-cyan-500 transition-colors cursor-pointer"
+                        className="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs sm:text-sm text-slate-100 focus:outline-none focus:border-cyan-500 transition-colors cursor-pointer"
                       >
                         <option value="Tài khoản / Số dư">Tài khoản / Số dư</option>
                         <option value="Nạp tiền MOMO/ATM">Nạp tiền MOMO/ATM</option>
@@ -741,19 +741,19 @@ export default function App() {
                   </div>
 
                   <div>
-                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">Chi Tiết Vấn Đề Gặp Phải</label>
+                    <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">Chi Tiết Vấn Đề Gặp Phải</label>
                     <textarea 
                       rows={3}
                       placeholder="Mô tả chi tiết tài khoản, số dư gặp sự cố hay nội dung cần xử lý khẩn cấp..."
                       value={ticket.note}
                       onChange={e => setTicket({ ...ticket, note: e.target.value })}
-                      class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs sm:text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition-colors resize-none"
+                      className="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs sm:text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition-colors resize-none"
                     />
                   </div>
 
                   <button 
                     type="submit"
-                    class="w-full py-2.5 px-4 bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-bold text-xs sm:text-sm rounded-lg shadow-lg shadow-cyan-500/10 flex items-center justify-center gap-2 transition cursor-pointer"
+                    className="w-full py-2.5 px-4 bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-bold text-xs sm:text-sm rounded-lg shadow-lg shadow-cyan-500/10 flex items-center justify-center gap-2 transition cursor-pointer"
                   >
                     <Send className="w-4 h-4" />
                     <span>Gửi Đơn Yêu Cầu Hỗ Trợ</span>
@@ -764,26 +764,26 @@ export default function App() {
 
               {/* Saved local tickets list */}
               {savedTickets.length > 0 && (
-                <div class="mt-6 pt-5 border-t border-slate-800">
-                  <div class="flex items-center justify-between mb-3">
-                    <span class="text-xs font-bold text-slate-300">YÊU CẦU ĐÃ GỬI CỦA BẠN:</span>
+                <div className="mt-6 pt-5 border-t border-slate-800">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xs font-bold text-slate-300">YÊU CẦU ĐÃ GỬI CỦA BẠN:</span>
                     <button 
                       onClick={handleClearTickets}
-                      class="text-[10px] text-rose-400 hover:underline cursor-pointer"
+                      className="text-[10px] text-rose-400 hover:underline cursor-pointer"
                     >
                       Dọn dẹp lịch sử
                     </button>
                   </div>
                   
-                  <div class="space-y-2 max-h-36 overflow-y-auto pr-1">
+                  <div className="space-y-2 max-h-36 overflow-y-auto pr-1">
                     {savedTickets.map((tc, key) => (
-                      <div key={key} class="p-2 bg-slate-950 border border-slate-850 rounded-lg text-xs space-y-1">
-                        <div class="flex items-center justify-between font-semibold">
-                          <span class="text-slate-200">{tc.name}</span>
-                          <span class="text-[10px] text-cyan-400 bg-cyan-950 px-1.5 rounded">{tc.service}</span>
+                      <div key={key} className="p-2 bg-slate-950 border border-slate-850 rounded-lg text-xs space-y-1">
+                        <div className="flex items-center justify-between font-semibold">
+                          <span className="text-slate-200">{tc.name}</span>
+                          <span className="text-[10px] text-cyan-400 bg-cyan-950 px-1.5 rounded">{tc.service}</span>
                         </div>
-                        <p class="text-slate-400 text-[11px]">SĐT: <span class="text-slate-300 font-mono">{tc.contact}</span></p>
-                        {tc.note ? <p class="text-slate-500 text-[11.5px] italic">“ {tc.note} ”</p> : null}
+                        <p className="text-slate-400 text-[11px]">SĐT: <span className="text-slate-300 font-mono">{tc.contact}</span></p>
+                        {tc.note ? <p className="text-slate-500 text-[11.5px] italic">“ {tc.note} ”</p> : null}
                       </div>
                     ))}
                   </div>
@@ -793,47 +793,47 @@ export default function App() {
             </div>
 
             {/* Quick API status widget info */}
-            <div id="api_status_widget" class="bg-slate-900/40 backdrop-blur-md border border-slate-800 rounded-2xl p-5 space-y-4">
-              <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+            <div id="api_status_widget" className="bg-slate-900/40 backdrop-blur-md border border-slate-800 rounded-2xl p-5 space-y-4">
+              <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
                 <Settings className="w-3.5 h-3.5 text-slate-400" />
                 <span>Trạng thái dịch vụ kết nối (Core APIs)</span>
               </h4>
 
-              <div class="grid grid-cols-2 gap-3 text-xs">
+              <div className="grid grid-cols-2 gap-3 text-xs">
                 
-                <div class="flex items-center justify-between p-2.5 bg-slate-950/60 rounded-lg border border-indigo-950/10">
-                  <span class="text-slate-400">Facebook API</span>
-                  <span class="text-[10px] text-amber-500 bg-amber-500/10 px-1.5 rounded font-semibold animate-pulse">Bảo trì</span>
+                <div className="flex items-center justify-between p-2.5 bg-slate-950/60 rounded-lg border border-indigo-950/10">
+                  <span className="text-slate-400 font-sans">Facebook API</span>
+                  <span className="text-[10px] text-amber-500 bg-amber-500/10 px-1.5 rounded font-semibold animate-pulse font-sans">Bảo trì</span>
                 </div>
 
-                <div class="flex items-center justify-between p-2.5 bg-slate-950/60 rounded-lg border border-indigo-950/10">
-                  <span class="text-slate-400">TikTok Engine</span>
-                  <span class="text-[10px] text-emerald-400 bg-emerald-500/10 px-1.5 rounded font-semibold">Ổn định</span>
+                <div className="flex items-center justify-between p-2.5 bg-slate-950/60 rounded-lg border border-indigo-950/10">
+                  <span className="text-slate-400 font-sans">TikTok Engine</span>
+                  <span className="text-[10px] text-emerald-400 bg-emerald-500/10 px-1.5 rounded font-semibold font-sans">Ổn định</span>
                 </div>
 
-                <div class="flex items-center justify-between p-2.5 bg-slate-950/60 rounded-lg border border-indigo-950/10">
-                  <span class="text-slate-400">Instagram API</span>
-                  <span class="text-[10px] text-amber-500 bg-amber-500/10 px-1.5 rounded font-semibold animate-pulse">Di trú</span>
+                <div className="flex items-center justify-between p-2.5 bg-slate-950/60 rounded-lg border border-indigo-950/10">
+                  <span className="text-slate-400 font-sans">Instagram API</span>
+                  <span className="text-[10px] text-amber-500 bg-amber-500/10 px-1.5 rounded font-semibold animate-pulse font-sans">Di trú</span>
                 </div>
 
-                <div class="flex items-center justify-between p-2.5 bg-slate-950/60 rounded-lg border border-indigo-950/10">
-                  <span class="text-slate-400">Auto Banking</span>
-                  <span class="text-[10px] text-rose-500 bg-rose-500/10 px-1.5 rounded font-semibold">Tạm dừng</span>
+                <div className="flex items-center justify-between p-2.5 bg-slate-950/60 rounded-lg border border-indigo-950/10">
+                  <span className="text-slate-400 font-sans">Auto Banking</span>
+                  <span className="text-[10px] text-rose-500 bg-rose-500/10 px-1.5 rounded font-semibold font-sans">Tạm dừng</span>
                 </div>
 
-                <div class="flex items-center justify-between p-2.5 bg-slate-950/60 rounded-lg border border-indigo-950/10">
-                  <span class="text-slate-400">Youtube Views</span>
-                  <span class="text-[10px] text-emerald-400 bg-emerald-500/10 px-1.5 rounded font-semibold">Ổn định</span>
+                <div className="flex items-center justify-between p-2.5 bg-slate-950/60 rounded-lg border border-indigo-950/10">
+                  <span className="text-slate-400 font-sans">Youtube Views</span>
+                  <span className="text-[10px] text-emerald-400 bg-emerald-500/10 px-1.5 rounded font-semibold font-sans">Ổn định</span>
                 </div>
 
-                <div class="flex items-center justify-between p-2.5 bg-slate-950/60 rounded-lg border border-indigo-950/10">
-                  <span class="text-slate-400">Telegram Bot</span>
-                  <span class="text-[10px] text-emerald-400 bg-emerald-500/10 px-1.5 rounded font-semibold">Ổn định</span>
+                <div className="flex items-center justify-between p-2.5 bg-slate-950/60 rounded-lg border border-indigo-950/10">
+                  <span className="text-slate-400 font-sans">Telegram Bot</span>
+                  <span className="text-[10px] text-emerald-400 bg-emerald-500/10 px-1.5 rounded font-semibold font-sans">Ổn định</span>
                 </div>
 
               </div>
               
-              <div class="flex gap-2 p-3 bg-cyan-950/20 border border-cyan-950/50 rounded-xl text-[11px] text-cyan-300 leading-relaxed">
+              <div className="flex gap-2 p-3 bg-cyan-950/20 border border-cyan-950/50 rounded-xl text-[11px] text-cyan-300 leading-relaxed">
                 <Sparkles className="w-5 h-5 text-cyan-400 flex-shrink-0 animate-pulse" />
                 <span>
                   Hạ tầng máy chủ mới sử dụng công nghệ băng thông không giới hạn, đảm bảo các tác vụ API chạy nhanh tuyệt đối ngay sau khi di chuyển.
@@ -846,36 +846,36 @@ export default function App() {
         </div>
 
         {/* Support channels badges / Trust block */}
-        <div id="trust_partner_banner" class="border-t border-slate-900 pt-8 mt-12 text-center">
-          <p class="text-xs text-slate-500 uppercase tracking-widest font-bold mb-4">ĐỐI TÁC DỊCH VỤ VÀ GIAO DỊCH AN TOÀN CAO</p>
+        <div id="trust_partner_banner" className="border-t border-slate-900 pt-8 mt-12 text-center">
+          <p className="text-xs text-slate-500 uppercase tracking-widest font-bold mb-4">ĐỐI TÁC DỊCH VỤ VÀ GIAO DỊCH AN TOÀN CAO</p>
           
-          <div class="flex flex-wrap justify-center items-center gap-6 sm:gap-10 opacity-30 grayscale hover:grayscale-0 hover:opacity-75 transition-all duration-300">
-            <span class="text-sm font-extrabold text-white select-none">DATABASE ENCRYP</span>
-            <span class="text-sm font-extrabold text-white select-none">CLOUDFLARE SSL</span>
-            <span class="text-sm font-extrabold text-white select-none">MOMO SÉCURITÉ</span>
-            <span class="text-sm font-extrabold text-white select-none">PCI-DSS COMPLIANT</span>
+          <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-10 opacity-30 grayscale hover:grayscale-0 hover:opacity-75 transition-all duration-300">
+            <span className="text-sm font-extrabold text-white select-none">DATABASE ENCRYP</span>
+            <span className="text-sm font-extrabold text-white select-none">CLOUDFLARE SSL</span>
+            <span className="text-sm font-extrabold text-white select-none">MOMO SÉCURITÉ</span>
+            <span className="text-sm font-extrabold text-white select-none">PCI-DSS COMPLIANT</span>
           </div>
         </div>
 
       </main>
 
       {/* Footer Area */}
-      <footer id="app_footer" class="border-t border-slate-900 bg-slate-950 py-8 text-center text-xs z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3">
+      <footer id="app_footer" className="border-t border-slate-900 bg-slate-950 py-8 text-center text-xs z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3">
           
-          <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-slate-500 font-semibold">
-            <a href={zaloGroupLink} target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition flex items-center gap-1">
+          <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-slate-500 font-semibold">
+            <a href={zaloGroupLink} target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition flex items-center gap-1">
               <span>Group Zalo Cập Nhật</span>
               <ExternalLink className="w-3 h-3" />
             </a>
-            <span class="text-slate-800">|</span>
-            <a href={`tel:${rawHotline}`} class="hover:text-cyan-400 transition">Hotline: {hotlineNumber}</a>
-            <span class="text-slate-800">|</span>
-            <span class="text-slate-600">Hỗ trợ khẩn cấp 24/7</span>
+            <span className="text-slate-800">|</span>
+            <a href={`tel:${rawHotline}`} className="hover:text-cyan-400 transition">Hotline: {hotlineNumber}</a>
+            <span className="text-slate-800">|</span>
+            <span className="text-slate-600">Hỗ trợ khẩn cấp 24/7</span>
           </div>
 
-          <p class="text-slate-600">
-            &copy; {new Date().getFullYear()} <span class="text-slate-500 font-bold">{brandName}</span>. Bản Quyền Giao Diện Được Thiết Kế Cho Mục ĐÍch Nâng Cấp Hệ Thống Server Độc Quyền.
+          <p className="text-slate-600">
+            &copy; {new Date().getFullYear()} <span className="text-slate-500 font-bold">{brandName}</span>. Bản Quyền Giao Diện Được Thiết Kế Cho Mục Đích Nâng Cấp Hệ Thống Server Độc Quyền.
           </p>
 
         </div>
