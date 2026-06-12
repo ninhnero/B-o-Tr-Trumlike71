@@ -1,0 +1,6 @@
+{
+  "name": "TrumLike71 Bảo Trì",
+  "description": "Giao diện thông báo bảo trì và chuyển đổi máy chủ của Agency TRUMLIKE71.COM chuyên nghiệp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
